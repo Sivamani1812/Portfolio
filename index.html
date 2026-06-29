@@ -1,273 +1,368 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIVAMANI | Full Stack Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
-        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" type="text/css" href="./index.css" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-
+        crossorigin="anonymous" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-    <!----------------- Home page  ---------------------->
-   <header class="header">
-        <a href="#" class="toplogo">
-            <p>PORTFOLIO...</p>
+    <!-- ══════════════ LOADER ══════════════ -->
+    <div class="loader" id="loader">
+        <canvas id="loaderMatrix"></canvas>
+        <div class="loader-glow lg-one"></div>
+        <div class="loader-glow lg-two"></div>
+        <div class="loader-scan"></div>
+        <div class="loader-inner">
+            <div class="loader-logo" aria-label="SIVAMANI">
+                <span class="ll-split" style="--i:0">S</span>
+                <span class="ll-split" style="--i:1">I</span>
+                <span class="ll-split" style="--i:2">V</span>
+                <span class="ll-split" style="--i:3">A</span>
+                <span class="ll-split" style="--i:4">M</span>
+                <span class="ll-split" style="--i:5">A</span>
+                <span class="ll-split" style="--i:6">N</span>
+                <span class="ll-split" style="--i:7">I</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════ CURSOR ══════════════ -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- ══════════════ HEADER ══════════════ -->
+    <header class="header" id="header">
+        <a href="#home" class="logo">
+            <span class="lb">&lt;</span><span class="ln">SIVA</span><span class="ld">.</span><span
+                class="lv">dev</span><span class="lb">/&gt;</span>
         </a>
-        <i class="fa-solid fa-bars menu" onclick="toggleMenu()"></i>
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#skills">Skills</a>
-            <a href="#project">Projects</a>
-            <a href="#contact">Contact</a>
+        <nav class="navbar" id="navbar">
+            <a href="#home" class="nl active">Home</a>
+            <a href="#about" class="nl">About</a>
+            <a href="#experience" class="nl">Experience</a>
+            <a href="#education" class="nl">Education</a>
+            <a href="#skills" class="nl">Skills</a>
+            <a href="#projects" class="nl">Projects</a>
+            <a href="#contact" class="nl">Contact</a>
+            <a href="./Resume.pdf" class="nav-cta" target="_blank"><i class="fa-solid fa-download"></i> Resume</a>
         </nav>
+        <button class="mbtn" id="mbtn"><span></span><span></span><span></span></button>
     </header>
 
+    <!-- ══════════════ HOME ══════════════ -->
     <section class="home" id="home">
-        <!-- Animated Background Elements -->
-        <div class="bg-animation">
-            <div class="floating-shapes">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-
+        <canvas id="homeMatrix"></canvas>
+        <div class="grid-bg"></div>
         <div class="home-content">
-            <div class="greeting-text">
-                <span class="greeting">Hello, I'm</span>
+            <div class="chip"><span class="cdot"></span>Open to Opportunities</div>
+            <p class="hello"><span class="hb">&lt;</span>Hello World<span class="hb">/&gt;</span> — I'm</p>
+            <h1 class="hname"><span class="ac">SIVA</span><span >MANI</span></h1>
+            <div class="role-row">
+                <span class="rp">$&gt;&nbsp;</span>
+                <span id="typed"></span><span class="tcursor">▋</span>
             </div>
-            
-            <h1 class="name-title">
-                <span class="name-text">Sivamani</span>
-            </h1>
-            
-            <div class="text-animate">
-                <h3 class="typing-text">
-                    <span class="typing"></span>
-                    <span class="cursor">|</span>
-                </h3>
+            <p class="hdesc">Passionate Full Stack Developer building high-performance web apps with clean code,
+                intuitive UX, and modern architecture. I turn complex problems into elegant digital solutions.</p>
+            <div class="hbtns">
+                <a href="#projects" class="btn bg">View Work <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#contact" class="btn ol">Hire Me <i class="fa-solid fa-paper-plane"></i></a>
             </div>
-
-            <p class="intro-text">Hello! I'm Sivamani, an aspiring Full Stack Developer passionate about creating dynamic,
-                user-friendly web applications. I love turning complex problems into simple, beautiful, and intuitive solutions.</p>
-
-            <div class="btn-box">
-                <a href="./Resume.pdf" class="btn btn-primary">
-                    <span>Download Resume</span>
-                    <i class="fa-solid fa-download"></i>
-                </a>
-                <a href="#contact" class="btn btn-secondary">
-                    <span>Let's Talk</span>
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
-            </div>
-
-            <div class="home-sci">
-                <a href="" class="social-link" data-tooltip="Facebook">
-                    <i class="fa-brands fa-facebook"></i>
-                </a>
-                <a href="https://wa.me/919360452496" target="_blank" class="social-link" data-tooltip="WhatsApp">
-                    <i class="fa-brands fa-whatsapp"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/sivamani1812/" target="_blank" class="social-link" data-tooltip="LinkedIn">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a href="https://www.instagram.com/siva_18_offi/" target="_blank" class="social-link" data-tooltip="Instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="https://github.com/Sivamani1812" target="_blank" class="social-link" data-tooltip="GitHub">
-                    <i class="fa-brands fa-github"></i>
-                </a>
+            <div class="hsocials">
+                <a href="https://github.com/Sivamani1812" target="_blank" class="sico" data-t="GitHub"><i
+                        class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/sivamani1812/" target="_blank" class="sico" data-t="LinkedIn"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://wa.me/919360452496" target="_blank" class="sico" data-t="WhatsApp"><i
+                        class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/siva_18_offi/" target="_blank" class="sico" data-t="Instagram"><i
+                        class="fa-brands fa-instagram"></i></a>
             </div>
         </div>
-
-        <div class="home-img">
-            <div class="img-wrapper">
-                <div class="img-border"></div>
-                <div class="img-glow"></div>
-                <img src="./user2.jpg" alt="My Photo" class="profile-img">
-                <div class="floating-badge">
-                    <i class="fa-solid fa-code"></i>
-                    <span>Developer</span>
-                </div>
+        <div class="hvisual">
+            <div class="ring r1"></div>
+            <div class="ring r2"></div>
+            <div class="ring r3"></div>
+            <div class="orbit">
+                <div class="od od1"><i class="bx bxl-react"></i></div>
+                <div class="od od2"><i class="bx bxl-python"></i></div>
+                <div class="od od3"><i class="bx bx-code-curly"></i></div>
+                <div class="od od4"><i class="bx bxl-nodejs"></i></div>
+            </div>
+            <div class="pwrap">
+                <img src="./user2.jpg" alt="Sivamani" class="pphoto" />
+                <div class="pglow"></div>
+            </div>
+            <div class="fcard fc1"><i class="fa-solid fa-code"></i>
+                <div><strong>Full Stack Dev</strong><small>React · Django · Node</small></div>
+            </div>
+            <div class="fcard fc2"><i class="fa-solid fa-star"></i>
+                <div><strong>30+ Projects</strong><small>Delivered &amp; Live</small></div>
+            </div>
+            <div class="fcard fc3"><i class="fa-solid fa-briefcase"></i>
+                <div><strong>1+ Year Exp</strong></div>
             </div>
         </div>
-
-        <!-- Scroll Indicator -->
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-            <div class="arrow">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+        <div class="scroll-hint">
+            <div class="smouse">
+                <div class="swheel"></div>
+            </div><span>Scroll</span>
         </div>
     </section>
 
+    <!-- ══════════════ ABOUT ══════════════ -->
     <section class="about" id="about">
-        <div class="about-bg-pattern"></div>
-        
-        <div class="section-header">
-            <span class="section-label">Get To Know</span>
-            <h2 class="heading">
-                <span class="heading-main">About</span>
-                <span class="heading-accent">Me</span>
-            </h2>
-            <div class="heading-underline"></div>
+        <div class="stag reveal">// about_me.js</div>
+        <div class="sh reveal">
+            <h2>About <span>Me</span></h2>
+            <div class="hl"></div>
         </div>
-
-        <div class="about-wrapper">
-            <div class="about-img">
-                <div class="img-container">
-                    <div class="img-frame">
-                        <div class="frame-border"></div>
-                        <div class="frame-glow"></div>
-                        <img src="./p1.jpeg" alt="Sivamani" class="about-profile-img">
-                    </div>
-                    <div class="img-badge">
-                        <i class="fa-solid fa-award"></i>
-                        <span>Full Stack Developer</span>
-                    </div>
+        <div class="about-grid">
+            <div class="aimg-col reveal">
+                <div class="aframe">
+                    <img src="./p1.jpeg" alt="Sivamani" />
+                    <div class="scan"></div>
+                    <div class="corner ca"></div>
+                    <div class="corner cb"></div>
+                    <div class="corner cc"></div>
+                    <div class="corner cd"></div>
                 </div>
+                <div class="abadge"><i class="fa-solid fa-award"></i> Full Stack Developer</div>
             </div>
-
-            <div class="about-content">
-                <div class="content-header">
-                    <h3 class="about-name">S. SIVAMANI</h3>
-                    <div class="about-title">
-                        <span class="degree">B.Com., MCA.,</span>
+            <div class="ainfo reveal">
+                <div class="aname-row">
+                    <h3>S. <span>SIVAMANI</span></h3>
+                    <span class="dchip">B.Com.,MCA.,</span>
+                </div>
+                <p class="abio">Hi! I'm Sivamani — a passionate Full Stack Developer who loves turning ideas into real,
+                    interactive web experiences. Currently working at <strong>DGrow</strong> as a Web Developer, I
+                    specialize in building seamless applications with React, Django, and modern databases.</p>
+                <div class="astats">
+                    <div class="sbox">
+                        <div class="snum" data-t="30">0</div>
+                        <div class="slbl">Projects</div>
+                    </div>
+                    <div class="sbox">
+                        <div class="snum" data-t="1">0</div>
+                        <div class="slbl">Year Exp</div>
+                    </div>
+                    <div class="sbox">
+                        <div class="snum" data-t="2">0</div>
+                        <div class="slbl">Companies</div>
+                    </div>
+                    <div class="sbox">
+                        <div class="snum pct" data-t="100">0</div>
+                        <div class="slbl">Dedication</div>
                     </div>
                 </div>
-
-                <div class="about-description">
-                    <p class="description-text">
-                        Hi! I'm Sivamani — a passionate and curious developer who loves turning ideas into real interactive
-                        web experiences. With a strong foundation in both front-end and back-end technologies, I specialize
-                        in creating seamless, user-friendly applications that solve real-world problems.
-                    </p>
+                <div class="atags">
+                    <span>React.js</span><span>Python</span><span>Django</span>
+                    <span>JavaScript</span><span>Node.js</span><span>PostgreSQL</span>
                 </div>
-
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">10+</div>
-                        <div class="stat-label">Projects</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">1+</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Dedication</div>
-                    </div>
-                </div>
-
-                <div class="about-skills-preview">
-                    <span class="skill-tag">React.js</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Django</span>
-                    <span class="skill-tag">JavaScript</span>
-                </div>
-
-                <div class="btn-box">
-                    <a href="#contact" class="btn btn-contact">
-                        <span>Get In Touch</span>
-                        <i class="fa-solid fa-paper-plane"></i>
-                    </a>
+                <div class="abtns">
+                    <a href="#contact" class="btn bg">Get In Touch <i class="fa-solid fa-paper-plane"></i></a>
+                    <a href="./Resume.pdf" class="btn ol" target="_blank">Resume <i
+                            class="fa-solid fa-download"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!--------------------- EDUCATION section  --------------------->
+    <!-- ══════════════ EXPERIENCE ══════════════ -->
+    <section class="experience" id="experience">
+        <div class="stag reveal">// experience.json</div>
+        <div class="sh reveal">
+            <h2>Work <span>Experience</span></h2>
+            <div class="hl"></div>
+            <p class="ssub">My professional journey — companies, roles &amp; impact.</p>
+        </div>
 
+        <div class="exp-timeline">
+
+            <!-- DGrow -->
+            <div class="exp-item ei-left reveal">
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div class="exp-company-logo"><i class="fa-solid fa-globe"></i></div>
+                        <div class="exp-company-info">
+                            <h3 class="exp-company">DGrow</h3>
+                            <span class="exp-badge current">Current</span>
+                        </div>
+                    </div>
+                    <div class="exp-role-row">
+                        <span class="exp-role">Web Developer</span>
+                        <span class="exp-date"><i class="fa-regular fa-calendar"></i> Nov 2025 – Present</span>
+                    </div>
+                    <ul class="exp-list">
+                        <li>Developing and maintaining responsive web applications</li>
+                        <li>Building user-friendly UI with HTML, CSS, JS, Bootstrap &amp; React.js</li>
+                        <li>Backend integration using Django and REST APIs</li>
+                        <li>Version control &amp; team collaboration via Git &amp; GitHub</li>
+                        <li>Debugging, performance optimization, and feature enhancements</li>
+                    </ul>
+                    <div class="exp-tech">
+                        <span>React.js</span><span>Django</span><span>REST
+                            API</span><span>Bootstrap</span><span>Git</span>
+                    </div>
+                </div>
+                <div class="exp-center-dot">
+                    <div class="ecd-inner"></div>
+                </div>
+            </div>
+
+            <!-- VCodez -->
+            <div class="exp-item ei-right reveal">
+                <div class="exp-center-dot">
+                    <div class="ecd-inner"></div>
+                </div>
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div class="exp-company-logo intern"><i class="fa-solid fa-laptop-code"></i></div>
+                        <div class="exp-company-info">
+                            <h3 class="exp-company">VCodez</h3>
+                            <span class="exp-badge intern-badge">Internship</span>
+                        </div>
+                    </div>
+                    <div class="exp-role-row">
+                        <span class="exp-role">Full Stack Python Developer Intern</span>
+                        <span class="exp-date"><i class="fa-regular fa-calendar"></i> Jun 2025 – Sep 2025</span>
+                    </div>
+                    <ul class="exp-list">
+                        <li>3-month internship in Full Stack Python development</li>
+                        <li>Hands-on Django (backend) &amp; React.js (frontend) experience</li>
+                        <li>Worked with PostgreSQL, REST APIs for data management</li>
+                        <li>Collaborative development using Git &amp; GitHub</li>
+                    </ul>
+                    <div class="exp-tech">
+                        <span>Python</span><span>Django</span><span>React.js</span><span>PostgreSQL</span><span>REST
+                            API</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Experience Stats Bar -->
+        <div class="exp-stats reveal">
+            <div class="es-item">
+                <i class="fa-solid fa-building"></i>
+                <div class="es-num" data-t="2">0</div>
+                <div class="es-lbl">Companies</div>
+            </div>
+            <div class="es-div"></div>
+            <div class="es-item">
+                <i class="fa-solid fa-calendar-check"></i>
+                <div class="es-num" data-t="12">0</div>
+                <div class="es-lbl">Months Total</div>
+            </div>
+            <div class="es-div"></div>
+            <div class="es-item">
+                <i class="fa-solid fa-code-branch"></i>
+                <div class="es-num" data-t="30">0</div>
+                <div class="es-lbl">Projects Built</div>
+            </div>
+            <div class="es-div"></div>
+            <div class="es-item">
+                <i class="fa-solid fa-fire"></i>
+                <div class="es-num pct" data-t="100">0</div>
+                <div class="es-lbl">Dedication</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════ EDUCATION ══════════════ -->
     <section class="education" id="education">
-        <div class="education-inner">
-            <div class="education-header">
-                <span class="education-tag">Learning Journey</span>
-                <h2 class="heading"> My <span>Journey</span></h2>
-                <p class="education-subtitle">
-                    A snapshot of my academic path and the specialized courses that shaped my full stack and analytics skills.
-                </p>
-            </div>
+        <div class="stag reveal">// education.json</div>
+        <div class="sh reveal">
+            <h2>My <span>Journey</span></h2>
+            <div class="hl"></div>
+        </div>
 
-            <div class="education-row">
-                <div class="education-column">
-                    <h3 class="title"> Education</h3>
-                    <div class="education-box">
-                        <div class="education-content">
-                            <div class="content">
-                                <div class="year"><i class="fa-solid fa-calendar-days"></i>2007 - 2019</div>
-                                <h3>School - ST.XAVIER'S HR SEC SCHOOL</h3>
-                                <p>School life can be a time of learning, friendship, and growth. Some say that school life
-                                    teaches students discipline, and other life skills.</p>
-                            </div>
+        <div class="edu-wrap">
+            <!-- Education -->
+            <div class="edu-col reveal">
+                <div class="edu-col-hd"><i class="fa-solid fa-graduation-cap"></i> Education</div>
+                <div class="tl">
+                    <div class="tli">
+                        <div class="tld"></div>
+                        <div class="tlc">
+                            <div class="tly"><i class="fa-solid fa-calendar"></i> 2023 – 2025</div>
+                            <h4>Master of Computer Applications</h4>
+                            <p class="tlinst">Madha Engineering College</p>
+                            <div class="tlbadge">CGPA: 8.2 / 10</div>
+                            <p>Advanced postgraduate program with deep expertise in computer applications and software
+                                development.</p>
                         </div>
-                        <div class="education-content">
-                            <div class="content">
-                                <div class="year"><i class="fa-solid fa-calendar-days"></i>2019 - 2022</div>
-                                <h3>Bachelor Degree - M S University <span>(B.Com)</span></h3>
-                                <p>A UG degree is a post-secondary education that students pursue after high school and
-                                    before pursuing a postgraduate degree.</p>
-                            </div>
+                    </div>
+                    <div class="tli">
+                        <div class="tld"></div>
+                        <div class="tlc">
+                            <div class="tly"><i class="fa-solid fa-calendar"></i> 2019 – 2022</div>
+                            <h4>Bachelor of Commerce (B.Com)</h4>
+                            <p class="tlinst">Manonmaniam Sundaranar University</p>
+                            <div class="tlbadge">CGPA: 8.9 / 10</div>
+                            <p>Undergraduate degree building strong analytical and academic foundations.</p>
                         </div>
-                        <div class="education-content">
-                            <div class="content">
-                                <div class="year"><i class="fa-solid fa-calendar-days"></i>2023 - 2025</div>
-                                <h3>Master Degree - Madha Engineering College <span>(MCA)</span> </h3>
-                                <p>A PG degree is an advanced academic program that can help students gain expertise in a
-                                    specific field. PG degree is a degree that a student pursues after completing an UG
-                                    degree.</p>
-                            </div>
+                    </div>
+                    <div class="tli">
+                        <div class="tld"></div>
+                        <div class="tlc">
+                            <div class="tly"><i class="fa-solid fa-calendar"></i> 2007 – 2019</div>
+                            <h4>School — SSLC &amp; HSC</h4>
+                            <p class="tlinst">ST. Xavier's Hr Sec School</p>
+                            <p>Foundation years of discipline, learning, and essential life skills.</p>
                         </div>
                     </div>
                 </div>
-                <div class="education-column">
-                    <h3 class="title"> Courses</h3>
-                    <div class="education-box">
-                        <div class="education-content">
-                            <div class="content">
-                                <div class="year"><i class="fa-solid fa-calendar-days"></i>2020 & 2023</div>
-                                <h3>CSC - <span>DCA & ADPP</span> </h3>
-                                <p>I’m learning in the DCA & ADPP course at CSC Academy. I’m studying Tally ERP9, GST, MS
-                                    Office, C, C++, and PYTHON and in a short time.</p>
-                            </div>
-                        </div>
+            </div>
 
-                        <div class="education-content">
-                            <div class="content">
-                                <div class="year"><i class="fa-solid fa-calendar-days"></i>2024 - 2025</div>
-                                <h3>CODE 99 IT Academy - <span>Full Stack Python Developer</span> </h3>
-                                <p>I have completed the Full Stack Developer training at Code99 IT Academy, gaining hands-on
-                                    experience in both front-end and back-end technologies.</p>
-                            </div>
+            <!-- Certificates -->
+            <div class="edu-col reveal">
+                <div class="edu-col-hd"><i class="fa-solid fa-certificate"></i> Certificates &amp; Courses</div>
+                <div class="cert-grid">
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fa-solid fa-code"></i></div>
+                        <div class="cert-body">
+                            <h4>Full Stack Python Developer</h4>
+                            <p class="cert-org">Code99 IT Academy — Velachery</p>
+                            <p>React, Django, REST APIs, PostgreSQL, Git — full hands-on curriculum.</p>
+                            <span class="cert-year">2024 – 2025</span>
                         </div>
-                        <div class="education-content">
-                            <div class="content">
-                                <div class="year"><i class="fa-solid fa-calendar-days"></i>2025</div>
-                                <h3>Novi-Tech - <span>Data Analytics</span></h3>
-                                <p>I have also completed an online Data Analytics course, where I learned to use Power BI to
-                                    create dynamic and interactive dashboards, enhancing my data visualization and
-                                    analytical skills.</p>
-                            </div>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fa-solid fa-chart-bar"></i></div>
+                        <div class="cert-body">
+                            <h4>Data Analytics</h4>
+                            <p class="cert-org">NoviTech R&amp;D Private Limited</p>
+                            <p>Power BI dashboards, data visualisation and analytical thinking.</p>
+                            <span class="cert-year">2025</span>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fa-solid fa-laptop"></i></div>
+                        <div class="cert-body">
+                            <h4>Advance Diploma in Python Programming</h4>
+                            <p class="cert-org">Computer Software College (CSC)</p>
+                            <p>Python, C, C++, MS Office, and advanced programming concepts.</p>
+                            <span class="cert-year">2023</span>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fa-solid fa-floppy-disk"></i></div>
+                        <div class="cert-body">
+                            <h4>Diploma in Computer Applications</h4>
+                            <p class="cert-org">Computer Software College (CSC)</p>
+                            <p>Tally ERP9, GST, MS Office — foundational IT and business tools.</p>
+                            <span class="cert-year">2020</span>
                         </div>
                     </div>
                 </div>
@@ -275,351 +370,292 @@
         </div>
     </section>
 
-    <!-------------------------- SKILLS section design --------------------------------->
-
-    <section id="skills">
-        <h2 class="section-title">My <span>Skills</span></h2>
-
-        <div class="skill-box-container">
-
-            <div class="skill-box">
-                <i class='bx bxl-html5' style="color:#E44D26;"></i>
-                <p>HTML</p>
+    <!-- ══════════════ SKILLS ══════════════ -->
+    <section class="skills" id="skills">
+        <div class="stag reveal">// skills.config.ts</div>
+        <div class="sh reveal">
+            <h2>My <span>Skills</span></h2>
+            <div class="hl"></div>
+        </div>
+        <div class="skills-grid reveal">
+            <div class="skc" data-w="90"><i class="bx bxl-html5" style="color:#E44D26"></i><span>HTML5</span>
+                <div class="skbar">
+                    <div class="skfill" data-w="90"></div>
+                </div>
             </div>
-
-            <div class="skill-box">
-                <i class='bx bxl-css3' style="color:#1572B6;"></i>
-                <p>CSS</p>
+            <div class="skc" data-w="85"><i class="bx bxl-css3" style="color:#1572B6"></i><span>CSS3</span>
+                <div class="skbar">
+                    <div class="skfill" data-w="85"></div>
+                </div>
             </div>
-
-            <div class="skill-box">
-                <i class='bx bxl-bootstrap' style="color:#563D7C;"></i>
-                <p>Bootstrap</p>
+            <div class="skc" data-w="80"><i class="bx bxl-bootstrap" style="color:#7952B3"></i><span>Bootstrap</span>
+                <div class="skbar">
+                    <div class="skfill" data-w="80"></div>
+                </div>
             </div>
-
-            <div class="skill-box">
-                <i class='bx bxl-javascript' style="color:#F7DF1E;"></i>
-                <p>JavaScript</p>
+            <div class="skc" data-w="85"><i class="bx bxl-javascript" style="color:#F7DF1E"></i><span>JavaScript</span>
+                <div class="skbar">
+                    <div class="skfill" data-w="85"></div>
+                </div>
             </div>
-
-            <div class="skill-box">
-                <i class='bx bxl-react' style="color:#61DAFB;"></i>
-                <p>React.js</p>
+            <div class="skc" data-w="82"><i class="bx bxl-react" style="color:#61DAFB"></i><span>React.js</span>
+                <div class="skbar">
+                    <div class="skfill" data-w="82"></div>
+                </div>
             </div>
-
-            <!-- <div class="skill-box">
-                <span class="c-circle-icon">C</span>
-                <p>C Language</p>
-            </div> -->
-
-            <div class="skill-box">
-                <i class='bx bxl-python' style="color:#FFD43B;"></i>
-                <p>Python</p>
+            <div class="skc" data-w="88"><i class="bx bxl-python" style="color:#FFD43B"></i><span>Python</span>
+                <div class="skbar">
+                    <div class="skfill" data-w="88"></div>
+                </div>
             </div>
-
-            <div class="skill-box">
-                <i class='bx bx-code-curly' style="color:#008000;"></i>
-                <p>Django</p>
+            <div class="skc" data-w="83"><i class="bx bx-code-curly" style="color:#00b34a"></i><span>Django</span>
+                <div class="skbar">
+                    <div class="skfill" data-w="83"></div>
+                </div>
             </div>
-
-            <div class="skill-box">
-                <i class='bx bx-link' style="color:#00E5FF;"></i>
-                <p>REST API</p>
+            <div class="skc" data-w="78"><i class="bx bx-link" style="color:#a78bfa"></i><span>REST API</span>
+                <div class="skbar">
+                    <div class="skfill" data-w="78"></div>
+                </div>
             </div>
-
-            <div class="skill-box">
-                <i class='bx bxl-nodejs' style="color:#68A063;"></i>
-                <p>Node.js</p>
+            <div class="skc" data-w="75"><i class="bx bxl-nodejs" style="color:#68A063"></i><span>Node.js</span>
+                <div class="skbar">
+                    <div class="skfill" data-w="75"></div>
+                </div>
             </div>
-
-            <div class="skill-box">
-                <i class='bx bxl-postgresql' style="color:#336791;"></i>
-                <p>PostgreSQL</p>
+            <div class="skc" data-w="80"><i class="bx bxl-postgresql" style="color:#336791"></i><span>PostgreSQL</span>
+                <div class="skbar">
+                    <div class="skfill" data-w="80"></div>
+                </div>
             </div>
-
-            <div class="skill-box">
-                <i class='bx bxs-data' style="color:#00618A;"></i>
-                <p>MySQL</p>
+            <div class="skc" data-w="78"><i class="bx bxs-data" style="color:#00618A"></i><span>MySQL</span>
+                <div class="skbar">
+                    <div class="skfill" data-w="78"></div>
+                </div>
             </div>
-
-            <div class="skill-box">
-                <i class='bx bxl-mongodb' style="color:#47A248;"></i>
-                <p>MongoDB</p>
+            <div class="skc" data-w="72"><i class="bx bxl-mongodb" style="color:#47A248"></i><span>MongoDB</span>
+                <div class="skbar">
+                    <div class="skfill" data-w="72"></div>
+                </div>
             </div>
-
-            <div class="skill-box">
-                <i class='bx bxl-github' style="color:#ffffff;"></i>
-                <p>GitHub</p>
+            <div class="skc" data-w="85"><i class="bx bxl-github" style="color:#fff"></i><span>GitHub</span>
+                <div class="skbar">
+                    <div class="skfill" data-w="85"></div>
+                </div>
             </div>
-
-            <div class="skill-box">
-                <i class='bx bx-code-alt' style="color:#00FFFF;"></i>
-                <p>VS Code</p>
+            <div class="skc" data-w="90"><i class="bx bx-code-alt" style="color:#a78bfa"></i><span>VS Code</span>
+                <div class="skbar">
+                    <div class="skfill" data-w="90"></div>
+                </div>
             </div>
-
-            <div class="skill-box">
-                <i class='bx bx-network-chart' style="color:#00B8D4;"></i>
-                <p>Postman</p>
+            <div class="skc" data-w="76"><i class="bx bx-network-chart" style="color:#FF6C37"></i><span>Postman</span>
+                <div class="skbar">
+                    <div class="skfill" data-w="76"></div>
+                </div>
             </div>
-
+            <div class="skc" data-w="70"><i class="bx bx-bar-chart-alt-2" style="color:#f59e0b"></i><span>Power
+                    BI</span>
+                <div class="skbar">
+                    <div class="skfill" data-w="70"></div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-
-    <!---------------------------------- Projects section  ---------------------------->
-    <section class="projects" id="project">
-        <div class="projects-header">
-            <span class="projects-tag">Selected Work</span>
-            <h2 class="heading">My <span>Projects</span></h2>
-            <p class="projects-subtitle">
-                A mix of frontend, full stack, and real-world client projects that highlight my coding style and problem-solving.
-            </p>
+    <!-- ══════════════ PROJECTS ══════════════ -->
+    <section class="projects" id="projects">
+        <div class="stag reveal">// projects.tsx</div>
+        <div class="sh reveal">
+            <h2>My <span>Projects</span></h2>
+            <div class="hl"></div>
+            <p class="ssub">Real-world full stack and frontend projects.</p>
         </div>
+        <div class="proj-grid">
 
-        <div class="projects-container">
+            <div class="pcard reveal featured" style="--d:0s">
+                <div class="pimg"><img src="./project8.png" alt="Phosphate Mining" />
+                    <div class="pov"><a href="https://marketingdgrow.github.io/Aghni_gold-1/" class="plink"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            View Project</a></div><span class="pfeat-tag">⭐ Featured</span>
+                </div>
+                <div class="pbody">
+                    <div class="pmeta"><span class="pbadge fullstack">Frontend Project</span></div>
+                    <h3>Aghni Gold - Gold Sell Page</h3>
+                    <p>Live Project</p>
+                    <div class="ptech"><span>Javascript</span><span>Html</span><span>Css</span><span>Bootstrap</span><span>API</span></div>
+                </div>
+            </div>
 
-            <!-- Full Stack / Backend Projects Row -->
-            <div class="projects-row">
-                <div class="project-card">
-                    <a href=" https://sivamani1812.github.io/eatandsleep/">
-                    <div class="project-img"><img src="./Project5.png" alt="Eat and right"></div>
-                    <h3>Eat Right Sleep Right</h3>
-                    <p>HTML, CSS, JavaScript</p></a>
+            <div class="pcard reveal" style="--d:0.1s">
+                <div class="pimg"><img src="./project7.png" alt="Smart Expense" />
+                    <div class="pov"><a href="https://herbbodrug-1.netlify.app/" class="plink"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            View Project</a></div>
                 </div>
-                <div class="project-card">
-                    <a href=" https://sivamani1812.github.io/sleepbud/">
-                    <div class="project-img"><img src="./Project4.png" alt="Sleepbud Sleep"></div>
-                    <h3>Sleep bud Sleep</h3>
-                    <p>HTML, CSS, JavaScript</p></a>
+                <div class="pbody">
+                    <div class="pmeta"><span class="pbadge fullstack">React Project</span></div>
+                    <h3>Herbbodrugs Medicines</h3>
+                    <p>Live Project</p>
+                    <div class="ptech"><span>React.js</span><span>HTML</span><span>CSS</span></div>
                 </div>
-                <div class="project-card">
-                    <a href="https://prolife-react-frontend.onrender.com/">
-                    <div class="project-img"><img src="./project6.png" alt="Full Stack Project 3"></div>
+            </div>
+
+            <div class="pcard reveal" style="--d:0.15s">
+                <div class="pimg"><img src="./project6.png" alt="Prolife" />
+                    <div class="pov"><a href="https://prolife-react-frontend.onrender.com/" target="_blank"
+                            class="plink"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a></div>
+                </div>
+                <div class="pbody">
+                    <div class="pmeta"><span class="pbadge fullstack">Full Stack</span><a
+                            href="https://prolife-react-frontend.onrender.com/" target="_blank" class="plinkico"><i
+                                class="fa-solid fa-globe"></i></a></div>
                     <h3>Prolife Hospital</h3>
-                    <p>React.Js, CSS</p></a>
+                    <p>Hospital management system with appointment booking, patient records and responsive UI built with
+                        React and Django.</p>
+                    <div class="ptech"><span>React.js</span><span>CSS</span><span>Django</span></div>
                 </div>
             </div>
 
-            <!-- Frontend Projects Row -->
-            <div class="projects-row">
-                <div class="project-card">
-                    <a href="https://sivamani1812.github.io/Barbershop-website" target="_blank">
-                        <div class="project-img"><img src="./project1.png" alt="Project 1"></div>
-                        <h3>Barbershop Webpage</h3>
-                        <p>HTML, CSS, JavaScript</p>
-                    </a>
+            <div class="pcard reveal" style="--d:0.2s">
+                <div class="pimg"><img src="./Project5.png" alt="Eat Right" />
+                    <div class="pov"><a href="https://sivamani1812.github.io/eatandsleep/" target="_blank"
+                            class="plink"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a></div>
                 </div>
-                <div class="project-card">
-                    <a href="https://sivamani1812.github.io/Hospital_website/">
-                        <div class="project-img"><img src="./project2.png" alt="Project 2"></div>
-                        <h3>Hospital Webpage</h3>
-                        <p>HTML, CSS, Bootstrap</p>
-                    </a>
+                <div class="pbody">
+                    <div class="pmeta"><span class="pbadge front">Frontend</span><a
+                            href="https://sivamani1812.github.io/eatandsleep/" target="_blank" class="plinkico"><i
+                                class="fa-solid fa-globe"></i></a></div>
+                    <h3>Eat Right Sleep Right</h3>
+                    <p>Health &amp; wellness website with sleep and nutrition guidance — responsive, clean vanilla JS.
+                    </p>
+                    <div class="ptech"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
                 </div>
-                <div class="project-card">
-                    <a href="https://sivamani1812.github.io/AC-service/" target="_blank">
-                        <div class="project-img"><img src="./project3.png" alt="Project 3"></div>
-                        <h3>AC-Service Webpage</h3>
-                        <p>HTML, CSS, Bootstrap</p>
-                    </a>
+            </div>
+
+            <div class="pcard reveal" style="--d:0.25s">
+                <div class="pimg"><img src="./project1.png" alt="Barbershop" />
+                    <div class="pov"><a href="https://sivamani1812.github.io/Barbershop-website" target="_blank"
+                            class="plink"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a></div>
+                </div>
+                <div class="pbody">
+                    <div class="pmeta"><span class="pbadge front">Frontend</span><a
+                            href="https://sivamani1812.github.io/Barbershop-website" target="_blank" class="plinkico"><i
+                                class="fa-solid fa-globe"></i></a></div>
+                    <h3>Barbershop Webpage</h3>
+                    <p>Modern barbershop landing page with elegant design and booking section.</p>
+                    <div class="ptech"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                </div>
+            </div>
+
+            <div class="pcard reveal" style="--d:0.3s">
+                <div class="pimg"><img src="./project9.png" alt="Hospital" />
+                    <div class="pov"><a href="https://sivamani1812.github.io/Hospital_website/" target="_blank"
+                            class="plink"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a></div>
+                </div>
+                <div class="pbody">
+                    <div class="pmeta"><span class="pbadge front">Frontend Project</span><a
+                            href="https://fireboysafety.in/" target="_blank" class="plinkico"><i
+                                class="fa-solid fa-globe"></i></a></div>
+                    <h3>FireBoy Webpage</h3>
+                    <p>live project</p>
+                    <div class="ptech"><span>HTML</span><span>CSS</span><span>Bootstrap</span><span>JavaScript</span><span>json</span></div>
                 </div>
             </div>
 
         </div>
     </section>
 
-
-    <!------------------ CONTACT section ------------------------->
+    <!-- ══════════════ CONTACT ══════════════ -->
+     
     <section class="contact" id="contact">
-        <div class="contact-header">
-            <span class="contact-tag">Let&apos;s work together</span>
-            <h2 class="heading"><span> Contact</span> Me!</h2>
-            <p class="contact-subtitle">
-                Have a project, collaboration, or opportunity in mind? Drop a message and I&apos;ll get back to you as soon as possible.
-            </p>
+        <div class="stag reveal">// contact.form</div>
+        <div class="sh reveal">
+            <h2>Get In <span>Touch</span></h2>
+            <div class="hl"></div>
+            <p class="ssub">Have a project or opportunity? Let's talk!</p>
         </div>
-
-        <div class="contact-container">
-            <!-- 🔹 Left side: Profile + contact info -->
-            <div class="contact-left">
-                <div class="profile-img1">
-                    <img src="./p1.jpeg" alt="Sivamani Profile">
+        <div class="contact-grid">
+            <div class="cinfo reveal">
+                <div class="cpro">
+                    <img src="./p1.jpeg" alt="Sivamani" />
+                    <div class="cpglow"></div>
                 </div>
-
-                <div class="contact-profile-meta">
-                    <h3 class="contact-name">Sivamani</h3>
-                    <p class="contact-role">Full Stack Developer</p>
-                </div>
-
-                <div class="contact-details">
-                    <div class="info-item">
-                        <i class="fa-solid fa-envelope"></i>
-                        <div>
-                            <span class="info-label">Email</span>
-                            <span class="info-value">sivamaniselvam1812@gmail.com</span>
-                        </div>
+                <h3 class="cname">SIVAMANI</h3>
+                <p class="crole">Full Stack Developer</p>
+                <div class="citems">
+                    <div class="ci">
+                        <div class="cii"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="cit"><small>Email</small><span>sivamaniselvam1812@gmail.com</span> <br>
+                        <span>siva18.official@gmail.com</span></div>
                     </div>
-                    <div class="info-item">
-                        <i class="fa-brands fa-github"></i>
-                        <div>
-                            <span class="info-label">GitHub</span>
-                            <span class="info-value">
-                                <a href="https://github.com/Sivamani1812" target="_blank">github.com/Sivamani1812</a>
-                            </span>
-                        </div>
+                    <div class="ci">
+                        <div class="cii"><i class="fa-brands fa-github"></i></div>
+                        <div class="cit"><small>GitHub</small><a href="https://github.com/Sivamani1812"
+                                target="_blank">github.com/Sivamani1812</a></div>
                     </div>
-                    <div class="info-item">
-                        <i class="fa-brands fa-linkedin"></i>
-                        <div>
-                            <span class="info-label">LinkedIn</span>
-                            <span class="info-value">
-                                <a href="https://www.linkedin.com/in/sivamani1812/" target="_blank">linkedin.com/in/sivamani1812</a>
-                            </span>
-                        </div>
+                    <div class="ci">
+                        <div class="cii"><i class="fa-brands fa-linkedin"></i></div>
+                        <div class="cit"><small>LinkedIn</small><a href="https://www.linkedin.com/in/sivamani1812/"
+                                target="_blank">linkedin.com/in/sivamani1812</a></div>
                     </div>
-                    <div class="info-item">
-                        <i class="fa-solid fa-phone"></i>
-                        <div>
-                            <span class="info-label">Phone</span>
-                            <span class="info-value">+91 9360452496</span>
-                        </div>
+                    <div class="ci">
+                        <div class="cii"><i class="fa-solid fa-phone"></i></div>
+                        <div class="cit"><small>Phone</small><span>+91 9360452496</span></div>
                     </div>
-                    <div class="info-item">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div>
-                            <span class="info-label">Location</span>
-                            <span class="info-value">Chennai, Tamil Nadu, India</span>
-                        </div>
+                    <div class="ci">
+                        <div class="cii"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="cit"><small>Location</small><span>Tirunelveli / Chennai, Tamil Nadu</span></div>
                     </div>
                 </div>
-
-                <a href="./Resume.pdf" class="btn btn-primary resume-btn">
-                    <span>Download Resume</span>
-                    <i class="fa-solid fa-download"></i>
-                </a>
+                <div class="csocials">
+                    <a href="https://github.com/Sivamani1812" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/sivamani1812/" target="_blank"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://wa.me/919360452496" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/siva_18_offi/" target="_blank"><i
+                            class="fa-brands fa-instagram"></i></a>
+                </div>
             </div>
-
-            <!-- 🔹 Right side: Contact Form -->
-            <div class="contact-right">
-                <form action="#" class="contact-form">
-                    <div class="form-header">
-                        <h3>Send me a message</h3>
-                        <p>Share a few details about your idea, and I&apos;ll respond with next steps.</p>
-                    </div>
-
-                    <div class="form-grid">
-                        <div class="input-box">
-                            <label for="name">Full Name</label>
-                            <input id="name" type="text" placeholder="Enter your name" required>
+            <div class="cform-wrap reveal">
+                <div class="cfhd"><span class="cftag">// send_message()</span>
+                    <p>Let's build something great together.</p>
+                </div>
+                <form class="cform" id="cForm">
+                    <div class="frow">
+                        <div class="ff"><label>Full Name</label>
+                            <div class="iw"><i class="fa-solid fa-user"></i><input type="text" placeholder="Your name"
+                                    required /></div>
                         </div>
-                        <div class="input-box">
-                            <label for="email">Email Address</label>
-                            <input id="email" type="email" placeholder="you@example.com" required>
-                        </div>
-                        <div class="input-box">
-                            <label for="phone">Contact Number</label>
-                            <input id="phone" type="text" placeholder="+91 9360452496" required>
-                        </div>
-                        <div class="textarea-box full-width">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" placeholder="Tell me briefly about your project or idea..." rows="5" required></textarea>
+                        <div class="ff"><label>Email</label>
+                            <div class="iw"><i class="fa-solid fa-envelope"></i><input type="email"
+                                    placeholder="you@example.com" required /></div>
                         </div>
                     </div>
-
-                    <button type="submit" class="btn btn-contact submit">
-                        <span>Send Message</span>
-                        <i class="fa-solid fa-paper-plane"></i>
-                    </button>
+                    <div class="ff"><label>Phone</label>
+                        <div class="iw"><i class="fa-solid fa-phone"></i><input type="tel"
+                                placeholder="+91 XXXXX XXXXX" /></div>
+                    </div>
+                    <div class="ff"><label>Message</label>
+                        <div class="iw taw"><i class="fa-solid fa-message"></i><textarea rows="5"
+                                placeholder="Tell me about your project..." required></textarea></div>
+                    </div>
+                    <button type="submit" class="btn bg full">Send Message <i
+                            class="fa-solid fa-paper-plane"></i></button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- footer section -->
+    <!-- ══════════════ FOOTER ══════════════ -->
+    <footer class="footer">
+        <div class="fin">
+            <div class="flogo"><span class="lb">&lt;</span>SIVA<span class="ld">.</span>dev<span class="lb">/&gt;</span>
+            </div>
+            <p>Designed &amp; Built by <span>S. Sivamani</span> · 2025</p>
+            <div class="flinks"><a href="#home">Home</a><a href="#about">About</a><a href="#projects">Projects</a><a
+                    href="#contact">Contact</a></div>
+        </div>
+    </footer>
 
-    <script>
-        function toggleMenu() {
-            document.querySelector(".navbar").classList.toggle("show");
-        }
-
-        // Typing Animation
-        const typingTexts = ['Frontend Developer', 'Full Stack Developer', 'Web Designer', 'UI/UX Enthusiast'];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typingElement = document.querySelector('.typing');
-        const cursorElement = document.querySelector('.cursor');
-
-        function typeText() {
-            const currentText = typingTexts[textIndex];
-            
-            if (isDeleting) {
-                typingElement.textContent = currentText.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typingElement.textContent = currentText.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            if (!isDeleting && charIndex === currentText.length) {
-                isDeleting = true;
-                setTimeout(typeText, 2000);
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                textIndex = (textIndex + 1) % typingTexts.length;
-                setTimeout(typeText, 500);
-            } else {
-                const speed = isDeleting ? 50 : 100;
-                setTimeout(typeText, speed);
-            }
-        }
-
-        // Start typing animation when page loads
-        window.addEventListener('DOMContentLoaded', () => {
-            setTimeout(typeText, 1000);
-        });
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close mobile menu if open
-                    document.querySelector(".navbar").classList.remove("show");
-                }
-            });
-        });
-
-        // Add scroll animation to sections
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe about section elements
-        document.querySelectorAll('.about-wrapper > *').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+    <script src="script.js"></script>
 </body>
 
 </html>
