@@ -17,34 +17,38 @@
 <body>
 
     <!-- ══════════════ LOADER ══════════════ -->
-    <div class="loader" id="loader">
-        <canvas id="loaderMatrix"></canvas>
-        <div class="loader-glow lg-one"></div>
-        <div class="loader-glow lg-two"></div>
+    <div class="loader" id="loader" role="status" aria-label="Loading portfolio">
+        <div class="loader-panel loader-panel-left"></div>
+        <div class="loader-panel loader-panel-right"></div>
+        <div class="loader-grid"></div>
         <div class="loader-scan"></div>
-        <div class="loader-inner">
-            <div class="loader-logo" aria-label="SIVAMANI">
-                <span class="ll-split" style="--i:0">S</span>
-                <span class="ll-split" style="--i:1">I</span>
-                <span class="ll-split" style="--i:2">V</span>
-                <span class="ll-split" style="--i:3">A</span>
-                <span class="ll-split" style="--i:4">M</span>
-                <span class="ll-split" style="--i:5">A</span>
-                <span class="ll-split" style="--i:6">N</span>
-                <span class="ll-split" style="--i:7">I</span>
+        <div class="loader-content">
+            <span class="loader-kicker">Initializing portfolio</span>
+            <div class="loader-mark" aria-label="SIVA">
+                <span class="loader-bracket">&lt;</span>
+                <span class="loader-word" aria-hidden="true">
+                    <span class="loader-letter">S</span>
+                    <span class="loader-letter">I</span>
+                    <span class="loader-letter">V</span>
+                    <span class="loader-letter">A</span>
+                </span>
+                <span class="loader-slash">/</span>
+                <span class="loader-bracket">&gt;</span>
+            </div>
+            <div class="loader-progress" aria-hidden="true">
+                <span class="loader-progress-bar" id="loaderProgressBar"></span>
+            </div>
+            <div class="loader-meta">
+                <span>Building interface</span>
+                <span id="loaderPercent">0%</span>
             </div>
         </div>
     </div>
 
-    <!-- ══════════════ CURSOR ══════════════ -->
-    <div class="cursor-dot"></div>
-    <div class="cursor-ring"></div>
-
     <!-- ══════════════ HEADER ══════════════ -->
     <header class="header" id="header">
         <a href="#home" class="logo">
-            <span class="lb">&lt;</span><span class="ln">SIVA</span><span class="ld">.</span><span
-                class="lv">dev</span><span class="lb">/&gt;</span>
+            <img src="./logo.png" alt="Siva Web Studio" />
         </a>
         <nav class="navbar" id="navbar">
             <a href="#home" class="nl active">Home</a>
@@ -64,7 +68,6 @@
         <canvas id="homeMatrix"></canvas>
         <div class="grid-bg"></div>
         <div class="home-content">
-            <div class="chip"><span class="cdot"></span>Open to Opportunities</div>
             <p class="hello"><span class="hb">&lt;</span>Hello World<span class="hb">/&gt;</span> — I'm</p>
             <h1 class="hname"><span class="ac">SIVA</span><span >MANI</span></h1>
             <div class="role-row">
@@ -473,15 +476,30 @@
         <div class="proj-grid">
 
             <div class="pcard reveal featured" style="--d:0s">
-                <div class="pimg"><img src="./project8.png" alt="Phosphate Mining" />
-                    <div class="pov"><a href="https://marketingdgrow.github.io/Aghni_gold-1/" class="plink"><i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            View Project</a></div><span class="pfeat-tag">⭐ Featured</span>
+                <div class="pimg"><img src="./project-magizh-aquatics.png" alt="Magizh Aquatics website" />
+                    <div class="pov"><a href="https://magizhaquatics.in/" target="_blank" rel="noopener noreferrer"
+                            class="plink"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            View Project</a></div><span class="pfeat-tag"><i class="fa-solid fa-star"></i> Featured</span>
                 </div>
                 <div class="pbody">
                     <div class="pmeta"><span class="pbadge fullstack">Frontend Project</span></div>
-                    <h3>Aghni Gold - Gold Sell Page</h3>
-                    <p>Live Project</p>
-                    <div class="ptech"><span>Javascript</span><span>Html</span><span>Css</span><span>Bootstrap</span><span>API</span></div>
+                    <h3>Magizh Aquatics</h3>
+                    <p>Premium aquascaping and exotic aquatic life website with service enquiries and consultation booking.</p>
+                    <div class="ptech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive UI</span></div>
+                </div>
+            </div>
+
+            <div class="pcard reveal" style="--d:0.05s">
+                <div class="pimg"><img src="./project-renta-rides.png" alt="Renta Rides website" />
+                    <div class="pov"><a href="https://rentarides.in/" target="_blank" rel="noopener noreferrer"
+                            class="plink"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            View Project</a></div>
+                </div>
+                <div class="pbody">
+                    <div class="pmeta"><span class="pbadge front">Frontend Project</span></div>
+                    <h3>Renta Rides</h3>
+                    <p>Premium chauffeur-driven car rental website with fleet discovery, tour services and ride booking.</p>
+                    <div class="ptech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive UI</span></div>
                 </div>
             </div>
 
@@ -570,7 +588,7 @@
         <div class="sh reveal">
             <h2>Get In <span>Touch</span></h2>
             <div class="hl"></div>
-            <p class="ssub">Have a project or opportunity? Let's talk!</p>
+            <p class="ssub">Planning a new website? Share your requirements and let's build it together.</p>
         </div>
         <div class="contact-grid">
             <div class="cinfo reveal">
@@ -615,31 +633,42 @@
                 </div>
             </div>
             <div class="cform-wrap reveal">
-                <div class="cfhd"><span class="cftag">// send_message()</span>
-                    <p>Let's build something great together.</p>
+                <div class="cfhd"><span class="cftag">// contact()</span>
+                    <p>Send Me a Message</p>
+                    <small>Have a question or want to connect? Leave your details below.</small>
                 </div>
                 <form class="cform" id="cForm">
                     <div class="frow">
                         <div class="ff"><label>Full Name</label>
-                            <div class="iw"><i class="fa-solid fa-user"></i><input type="text" placeholder="Your name"
-                                    required /></div>
+                            <div class="iw"><i class="fa-solid fa-user"></i><input type="text" name="fullName"
+                                    autocomplete="name" placeholder="Your name" required /></div>
                         </div>
-                        <div class="ff"><label>Email</label>
-                            <div class="iw"><i class="fa-solid fa-envelope"></i><input type="email"
-                                    placeholder="you@example.com" required /></div>
+                        <div class="ff"><label>Email Address</label>
+                            <div class="iw"><i class="fa-solid fa-envelope"></i><input type="email" name="email"
+                                    autocomplete="email" placeholder="you@example.com" required /></div>
                         </div>
                     </div>
-                    <div class="ff"><label>Phone</label>
-                        <div class="iw"><i class="fa-solid fa-phone"></i><input type="tel"
-                                placeholder="+91 XXXXX XXXXX" /></div>
+                    <div class="ff"><label>Phone Number</label>
+                        <div class="iw"><i class="fa-solid fa-phone"></i><input type="tel" name="phone"
+                                autocomplete="tel" inputmode="tel" placeholder="+91 XXXXX XXXXX" /></div>
                     </div>
                     <div class="ff"><label>Message</label>
                         <div class="iw taw"><i class="fa-solid fa-message"></i><textarea rows="5"
-                                placeholder="Tell me about your project..." required></textarea></div>
+                                name="message" placeholder="Write your message..." required></textarea></div>
                     </div>
-                    <button type="submit" class="btn bg full">Send Message <i
-                            class="fa-solid fa-paper-plane"></i></button>
+                    <button type="submit" class="btn bg full">Send Message on WhatsApp <i
+                            class="fa-brands fa-whatsapp"></i></button>
+                    <div class="form-status" id="formStatus" aria-live="polite"></div>
                 </form>
+                <div class="service-cta">
+                    <div class="service-cta-copy">
+                        <span>Our Service</span>
+                        <h3>Need a website for your business?</h3>
+                        <p>Explore the complete website development service and send your project enquiry.</p>
+                    </div>
+                    <a href="./website-service.html" class="btn service-cta-btn">Create Your Website <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
             </div>
         </div>
     </section>
@@ -647,7 +676,7 @@
     <!-- ══════════════ FOOTER ══════════════ -->
     <footer class="footer">
         <div class="fin">
-            <div class="flogo"><span class="lb">&lt;</span>SIVA<span class="ld">.</span>dev<span class="lb">/&gt;</span>
+            <div class="flogo"><img src="./logo.png" alt="Siva Web Studio" />
             </div>
             <p>Designed &amp; Built by <span>S. Sivamani</span> · 2025</p>
             <div class="flinks"><a href="#home">Home</a><a href="#about">About</a><a href="#projects">Projects</a><a
@@ -655,6 +684,8 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
 </body>
 
